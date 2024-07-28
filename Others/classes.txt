@@ -1,6 +1,0 @@
-background-color-white
-background-color-gray
-item-color-green background-color-oxford-blue text-color-white title-color-deep-sky-blue
-quick_nav
-remove-bottom-padding
-remove-top-padding
