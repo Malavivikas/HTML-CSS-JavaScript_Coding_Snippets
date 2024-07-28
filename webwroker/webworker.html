@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Workers Example</title>
+</head>
+
+<body>
+    <h1>Web Workers Example</h1>
+    <p id="result">Result will be displayed here...</p>
+
+    <script>
+        // Check if the browser supports Web Workers
+        if (typeof (Worker) !== "undefined") {
+            // Create a new Web Worker
+            const myWorker = new Worker("./webworker.js");
+
+            // Receive messages from the Web Worker
+            myWorker.onmessage = function (event) {
+                document.getElementById("result").innerHTML = event.data;
+            };
+
+            // Send a message to the Web Worker
+            myWorker.postMessage("Hello from the main thread!");
+
+            // Terminate the Web Worker (optional)
+            // myWorker.terminate();
+        } else {
+            document.getElementById("result").innerHTML = "Web Workers are not supported in this browser.";
+        }
+    </script>
+    <!-- <script src="./webworker.js"></script> -->
+</body>
+
+</html>

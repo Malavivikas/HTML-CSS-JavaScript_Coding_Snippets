@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <h2>Age Calculator</h2>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <button id="btn">Calculate Age</button>
+    <p id="result"></p>
+
+    <script>
+        const btn = document.getElementById("btn");
+        btn.click(calculateAge())
+        function calculateAge() {
+            const birthdate = new Date(document.getElementById('birthdate').value);
+            const today = new Date();
+
+            if (isNaN(birthdate.getTime())) {
+                document.getElementById('result').textContent = "Please enter a valid date.";
+                return;
+            }
+
+            const diffTime = today - birthdate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffWeeks = Math.floor(diffDays / 7);
+            const diffMonths = (today.getFullYear() - birthdate.getFullYear()) * 12 + (today.getMonth() - birthdate.getMonth());
+            const diffYears = today.getFullYear() - birthdate.getFullYear();
+
+            if (today.getMonth() < birthdate.getMonth() || (today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())) {
+                diffYears--;
+            }
+
+            document.getElementById('result').innerHTML = `
+                Age in days: ${diffDays}<br>
+                Age in weeks: ${diffWeeks}<br>
+                Age in months: ${diffMonths}<br>
+                Age in years: ${diffYears}
+            `;
+        }
+    </script>
+</body>
+
+</html>

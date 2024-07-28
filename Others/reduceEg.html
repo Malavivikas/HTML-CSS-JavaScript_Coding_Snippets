@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Example</title>
+</head>
+<body>
+    <script>
+        const users = [
+            {firstName: "Vikas", lastName: "Malavi",  age: 26},
+            {firstName: "Aniket", lastName: "Patil",  age: 75},
+            {firstName: "Rohan", lastName: "Modak",  age: 50},
+            {firstName: "Shashi", lastName: "Jamadar",  age: 26}
+        ]
+        const output = users.reduce((acc, curr) => {
+            if(curr.age < 30){
+                acc += curr.firstName;
+            }
+            return acc;
+        }, []);
+        console.log(output);
+    </script>
+</body>
+</html>

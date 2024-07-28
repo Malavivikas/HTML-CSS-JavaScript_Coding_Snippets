@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Component</title>
+    <style>
+        #drag-container,
+        #drop-container {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        #draggable {
+            width: 100px;
+            height: 50px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            cursor: grab;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="drag-container">
+        <div id="draggable" draggable="true">
+            Drag me!
+        </div>
+    </div>
+
+    <div id="drop-container">
+        Drop here!
+    </div>
+
+    <script>
+        const draggable = document.getElementById('draggable');
+        const dropContainer = document.getElementById('drop-container');
+
+        // Add event listeners for drag-and-drop
+        draggable.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', draggable.id);
+            draggable.style.opacity = '0.5';
+        });
+
+        draggable.addEventListener('dragend', () => {
+            draggable.style.opacity = '1';
+        });
+
+        dropContainer.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        dropContainer.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const draggedElementId = e.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(draggedElementId);
+
+            dropContainer.appendChild(draggedElement);
+        });
+
+    </script>
+
+</body>
+
+</html>

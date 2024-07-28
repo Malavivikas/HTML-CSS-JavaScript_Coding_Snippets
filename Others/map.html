@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        .element100vw {
+            /* width: 100vw; */
+            height: 100px;
+            background: #000;
+        }
+
+        .element {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 5rem;
+            transition: all 2s ease-in-out;
+        }
+
+        .animate {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: example-animation 2s ease-in-out 1s infinite alternate;
+        }
+
+        .element:hover {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        @keyframes example-animation {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateX(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(100px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30260.803167635684!2d73.73589775103713!3d18.546951620402197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bea60b2a1845%3A0xa441a6455f1a5945!2sSus%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700729212022!5m2!1sen!2sin"
+        width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="element100vw"></div>
+    <div class="element"></div>
+    <div class="animate"></div>
+
+    <script>
+        function handleFullWidthSizing() {
+            const scrollbarWidth = window.innerWidth - document.body.clientWidth
+
+            document.querySelector('element100vw').style.width = `calc(100vw - ${scrollbarWidth}px)`
+        }
+    </script>
+</body>
+
+</html>

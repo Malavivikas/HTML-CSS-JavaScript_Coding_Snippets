@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><dfn id="html-def">HTML</dfn> is the standard markup language for creating web pages.</p>
+
+<p>This is some text...</p>
+
+<p>This is some text...</p>
+
+<p>This is some text...</p>
+
+<p>Learn <a href="#html-def" id='link'>HTML</a> now.</p>
+
+</body>
+<script>
+let target = document.getElementById("html-def");
+let link = document.getElementById("link");
+
+link.addEventListener('click', () => {
+    target.style.color="red";
+})
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <script>
+         // roman numeral
+         var romanNum = new Array();
+         romanNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+         // decimal number
+         var dNum = new Array();
+         dNum = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+         function decimalRoman(value) {
+            if (value <= 0 || value >= 4000)
+               return value;
+               var romanNumeral = "";
+            for (var i = 0; i<romanNum.length; i++) {
+               while (value >= dNum[i]) {
+                  value -= dNum[i];
+                  romanNumeral += romanNum[i];
+               }
+            }
+            return romanNumeral;
+         }
+         var n = parseInt(prompt("Enter a number"))
+         document.write(decimalRoman(n));
+      </script>
+   </body>
+</html>

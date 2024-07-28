@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        div p {
+            /*all p's under div will have background color light gray*/
+            background-color: #eee;
+        }
+
+        div+p {
+            color: blue;
+        }
+
+        div>p {
+            /*all p's having div as a parent will be red in color*/
+            color: red;
+        }
+
+        p~ul {
+            /*all ul elements after p will be colored red*/
+            color: red;
+        }
+
+        p:nth-child(1) {
+            color: green;
+        }
+
+        p:nth-of-type(2) {
+            color: cyan;
+        }
+
+        /* :not(p) {
+            color: violet;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="class1 clas2">
+        <p class="class2">First para</p>
+        <a href="#">Link 1</a>
+        <p>Second para</p>
+        <h1>Heading 1</h1>
+        <p>Third Para</p>
+        <p>Fourth para</p>
+    </div>
+    <p>After div para</p> <!-- this will be colored 'blue' for div+p-->
+    <div>
+        <p>The first paragraph.</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>one</li>
+            <li>one</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .view-item{
+            background-color: khaki;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module">
+        import Model from './model/model.js';
+        import CustomView from './view/custom-view.js';
+
+        const m1 = new Model({ title: "Hello World", description: "This is my first model program." });
+
+        let root = document.querySelector("#root");
+
+        const view = new CustomView(m1);
+        view.render();
+        root.appendChild(view.el)
+
+        setTimeout(() => {
+            m1.set("title", "Learning to program in JavaScript")
+        }, 3000)
+        setTimeout(() => {
+            m1.set("title", "Learning to program in Python")
+        }, 6000)
+
+    </script>
+</body>
+
+</html>

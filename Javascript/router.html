@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router</title>
+</head>
+
+<body>
+    <a href="#home">home</a>
+    <a href="#about">about</a>
+    <a href="#help">help</a>
+    <div id="root"></div>
+
+    <script type="module">
+        import Router from "./router/router.js";
+        const root = document.querySelector("#root")
+        const r1 = new Router();
+        r1.add('home',()=>{
+            root.innerHTML = '<h1>Home</h1>'
+        })
+        r1.add('about',()=>{
+            root.innerHTML = '<h1>About</h1>'
+        })
+        r1.add('help',()=>{
+            root.innerHTML = '<h1>Help</h1>'
+        })
+    </script>
+
+    <!-- <script>
+        const person = {};
+
+        person['name'] = 'Aptlogica';
+        person['lastname'] = 'abc';
+        person['lang'] = ['Hindi', 'Marathi', 'Punjabi'];
+
+
+        const router = {
+            'home': home,
+            'about': () => { console.log('About') }
+        };
+
+        function home() {
+            console.log('Home')
+        }
+
+        // const prop = 'name'
+
+        // const prop = location.hash.slice(1);
+        // // console.log(person[prop]);
+        // const  f = router[prop];
+        // console.log(f);
+        // f();
+
+        // var add = function (a, b){
+        //     return a + b;
+        // }
+
+        function add(a, b){
+            return a + b;
+        }
+        // var add = (a, b) => a + b;
+
+        function sub(a, b) {
+            return a - b;
+        }
+        const expressionString = location.hash.slice(1);
+        console.log(expressionString)
+        const expressionComponents = expressionString.split('/');
+
+        const result = this[expressionComponents[0]](Number(expressionComponents[1]), Number(expressionComponents[2]));
+        console.log(result);
+
+    </script> -->
+</body>
+
+</html>

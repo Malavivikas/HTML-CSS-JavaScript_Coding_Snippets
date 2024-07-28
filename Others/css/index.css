@@ -1,0 +1,61 @@
+.para {
+  background: #000;
+}
+
+body {
+  background-color: cyan;
+  color: red;
+}
+
+.warning, .error, .success, .message {
+  border: 1px solid #ccc;
+  background: cyan;
+  padding: 10px;
+  color: #333;
+}
+
+.main .main__paragraph {
+  color: red;
+}
+.main .main__paragraph:hover {
+  color: blue;
+}
+
+.message .icon-Vikas {
+  background-image: url("/icons/Vikas.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+
+.icon-eye:before {
+  display: inline-block;
+  font-family: "Icon Font";
+  content: "\f112";
+}
+
+.icon-start:before {
+  display: inline-block;
+  font-family: "Icon Font";
+  content: "\f12e";
+}
+
+.icon-stop:before {
+  display: inline-block;
+  font-family: "Icon Font";
+  content: "\f12f";
+}
+
+/*# sourceMappingURL=index.css.map */

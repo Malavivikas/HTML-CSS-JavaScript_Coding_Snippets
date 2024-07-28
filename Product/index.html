@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="thumb">
+            <li onmouseover="changeImage('watch1.jpg')"> <img src="./watch1.jpg" alt=""> </li>
+            <li onmouseover="changeImage('watch2.jpg')"> <img src="./watch2.jpg" alt=""> </li>
+            <li onmouseover="changeImage('watch3.jpg')"> <img src="./watch3.jpg" alt=""> </li>
+        </ul>
+        <div class="imgBx">
+            <h2>Watch</h2>
+            <img src="./watch1.jpg" class="image" alt="">
+            <ul class="size">
+                <span>Size</span>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+            <a href="#" class="btn">Add To Cart</a>
+        </div>
+    </div>
+    <script>
+        function changeImage(any) {
+            document.querySelector('.image').src = any;
+        }
+    </script>
+</body>
+
+</html>
