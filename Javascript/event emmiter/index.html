@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="module">
+    import Model from './model/model.js';
+    // import View from './view/view.js';
+    import ViewItem from './view/view-item.js';
+
+    const m1 = new Model({ title: "Hello World", description: "This is my first model program." });
+
+    // console.log(m1.get('title'));
+
+    let root = document.querySelector("#root");
+    let view = new ViewItem(root, m1);
+
+    /* m1.listenTo('changed', (eventType, eventHandler) => {
+        let item = { title: eventHandler.context.get("title"), description: eventHandler.context.get("description") }
+
+        view.render(item)
+    }) */
+    setTimeout(()=>{
+        m1.set("title", "Learning to program in JavaScript")
+    },3000)
+    setTimeout(()=>{
+        m1.set("title", "Learning to program in Python")
+    },6000)
+
+</script>
+
+</html>

@@ -3,38 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training</title>
+    <title>Context Menu</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div id="root"></div>
+
+    <div class="wrapper">
+        <div class="content">
+            <ul class="menu">
+                <li class="item">
+                    <i class="uil uil-eye"></i>
+                    <span>Preview</span>
+                </li>
+                <li class="item share">
+                    <div>
+                        <i class="uil uil-share"></i>
+                        <span>Share</span>
+                    </div>
+                    <i class="uil uil-angle-right"></i>
+                    <ul class="share-menu">
+                        <li class="item">
+                            <i class="uil uil-twitter-alt"></i>
+                            <span>Twitter</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-instagram-alt"></i>
+                            <span>Instagram</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-dribbble"></i>
+                            <span>Dribble</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-telegram-alt"></i>
+                            <span>Telegram</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <i class="uil uil-link-alt"></i>
+                    <span>Get Link</span>
+                </li>
+                <li class="item">
+                    <i class="uil uil-edit"></i>
+                    <span>Rename</span>
+                </li>
+                <li class="item">
+                    <i class="uil uil-trash-alt"></i>
+                    <span>Delete</span>
+                </li>
+            </ul>
+            <div class="setting">
+                <li class="item">
+                    <i class="uil uil-setting"></i>
+                    <span>Settings</span>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
-<script type="module">
-    import Model from './model/model.js';
-    // import View from './view/view.js';
-    import ViewItem from './view/view-item.js';
-
-    const m1 = new Model({ title: "Hello World", description: "This is my first model program." });
-
-    // console.log(m1.get('title'));
-
-    let root = document.querySelector("#root");
-    let view = new ViewItem(root, m1);
-
-    /* m1.listenTo('changed', (eventType, eventHandler) => {
-        let item = { title: eventHandler.context.get("title"), description: eventHandler.context.get("description") }
-
-        view.render(item)
-    }) */
-    setTimeout(()=>{
-        m1.set("title", "Learning to program in JavaScript")
-    },3000)
-    setTimeout(()=>{
-        m1.set("title", "Learning to program in Python")
-    },6000)
-
-</script>
 
 </html>
