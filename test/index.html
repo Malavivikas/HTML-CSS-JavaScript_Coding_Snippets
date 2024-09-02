@@ -4,8 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <title>JSONPlaceholder Data Fetch</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        li {
+            color: red;
+        }
+
+        li::marker {
+            color: blue;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,9 +24,20 @@
     </header>
     <main>
         <section id="content">
-
         </section>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+        <form action="" method="get">
+            <label for="text1">Input:</label>
+            <input type="text" id="text1">
+            <button
+                style="all: unset; background-color: aqua; color: black; padding: 10px; border-radius: 5px; font-weight: 500;">Submit</button>
+        </form>
     </main>
+    <noscript></noscript>
     <script src="script.js"></script>
 </body>
 
