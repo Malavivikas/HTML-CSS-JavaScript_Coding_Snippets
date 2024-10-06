@@ -5,10 +5,6 @@ const addEntryButton = document.getElementById("add-entry");
 const clearButton = document.getElementById("clear");
 const output = document.getElementById("output");
 let isError = false;
-const inpcont = Array.from(document.querySelectorAll(".input-container"));
-for (const inp of inpcont) {
-  console.log(inp);
-}
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
@@ -44,19 +40,19 @@ function calculateCalories(e) {
   isError = false;
 
   const breakfastNumberInputs = document.querySelectorAll(
-    "#breakfast input[type=number]"
+    "#breakfast input[type='number']"
   );
   const lunchNumberInputs = document.querySelectorAll(
-    "#lunch input[type=number]"
+    "#lunch input[type='number']"
   );
   const dinnerNumberInputs = document.querySelectorAll(
-    "#dinner input[type=number]"
+    "#dinner input[type='number']"
   );
   const snacksNumberInputs = document.querySelectorAll(
-    "#snacks input[type=number]"
+    "#snacks input[type='number']"
   );
   const exerciseNumberInputs = document.querySelectorAll(
-    "#exercise input[type=number]"
+    "#exercise input[type='number']"
   );
 
   const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
@@ -109,10 +105,16 @@ function clearForm() {
   const inputContainers = Array.from(
     document.querySelectorAll(".input-container")
   );
+
   for (const container of inputContainers) {
     container.innerHTML = "";
   }
+
+  budgetNumberInput.value = "";
+  output.innerText = "";
+  output.classList.add("hide");
 }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
+clearButton.addEventListener("click", clearForm);
