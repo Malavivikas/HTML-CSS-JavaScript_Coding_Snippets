@@ -1,0 +1,70 @@
+.title {
+  background-color: #8bc34a;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question {
+  background-color: #e6ee9c;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.instruction {
+  color: #42a5f5;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.instruction strong {
+  font-weight: bold;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid #a49fa4;
+  background-color: white;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #28a745;
+  outline: 1px solid #28a745;
+  outline-color: #28a745;
+  outline-offset: 2px;
+  border: none;
+}
+
+.submit-btn {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #6c757d;
+  pointer-events: none;
+}
+
+.form:has(.form-check-input:checked) .submit-btn {
+  background-color: #8cc63f;
+  pointer-events: all;
+}
+
+.card {
+  background-color: #bfd1ab;
+  border: none;
+}
+@media (max-width: 1024px) {
+  .title {
+    border-radius: 0 !important;
+  }
+}
